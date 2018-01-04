@@ -30,7 +30,7 @@ class MenuXDGCheck(AbstractCheck.AbstractFilesCheck):
     def parse_desktop_file(self, pkg, root, f, filename):
         cfp = cfgparser.RawConfigParser()
         try:
-            with open(f) as inputf:
+            with open(f, encoding='utf-8') as inputf:
                 cfp.readfp(inputf, filename)
         except cfgparser.DuplicateSectionError as e:
             printError(
